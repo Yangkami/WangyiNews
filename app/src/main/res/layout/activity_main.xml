@@ -56,16 +56,7 @@
                     android:button="@null"
                     android:textColor="@drawable/selector_btn_live_text_main"
                     android:drawableTop="@drawable/selector_btn_live_main"/>
-                <RadioButton
-                    android:id="@+id/btn_audio"
-                    android:layout_width="0dp"
-                    android:layout_height="wrap_content"
-                    android:layout_weight="1"
-                    android:text="@string/audio_main"
-                    android:gravity="center"
-                    android:button="@null"
-                    android:textColor="@drawable/selector_btn_audio_text_main"
-                    android:drawableTop="@drawable/selector_btn_audio_main"/>
+
                 <RadioButton
                     android:id="@+id/btn_mine"
                     android:layout_width="0dp"

@@ -1,10 +1,10 @@
 <resources>
-    <string name="app_name">荔枝新闻</string>
-    <string name="news_main">新闻</string>
+    <string name="app_name">网易新闻</string>
+    <string name="news_main">首页</string>
     <string name="viedo_main">视频</string>
     <string name="live_main">直播</string>
     <string name="audio_main">电台</string>
-    <string name="mine_main">我的</string>
+    <string name="mine_main">我</string>
 
 
 </resources>

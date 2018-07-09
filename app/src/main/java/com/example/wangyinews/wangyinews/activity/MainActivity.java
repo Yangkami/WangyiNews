@@ -1,15 +1,16 @@
 package com.example.wangyinews.wangyinews.activity;
 
+import android.graphics.drawable.Drawable;
 import android.os.Bundle;
 import android.support.v4.view.ViewPager;
 import android.support.v7.app.AppCompatActivity;
 import android.util.Log;
+import android.widget.RadioButton;
 import android.widget.RadioGroup;
 
 import com.example.wangyinews.wangyinews.R;
 import com.example.wangyinews.wangyinews.pager.BasePager;
 import com.example.wangyinews.wangyinews.pager.MinePager;
-import com.example.wangyinews.wangyinews.pager.RadioPager;
 import com.example.wangyinews.wangyinews.adapter.MainPagerAdapter;
 import com.example.wangyinews.wangyinews.pager.LivePager;
 import com.example.wangyinews.wangyinews.pager.NewsPager;
@@ -37,6 +38,9 @@ public class MainActivity extends AppCompatActivity implements RadioGroup.OnChec
         rgMain.setOnCheckedChangeListener(this);
         vpMain.setOnPageChangeListener(this);
 
+
+
+
         //rgMain.setOnCheckedChangeListener(this);
 
         initData();
@@ -47,7 +51,7 @@ public class MainActivity extends AppCompatActivity implements RadioGroup.OnChec
         pagers.add(new NewsPager(this));
         pagers.add(new VideoPager(this));
         pagers.add(new LivePager(this));
-        pagers.add(new RadioPager(this));
+        //pagers.add(new RadioPager(this));
         pagers.add(new MinePager(this));
 
         //适配器
@@ -72,11 +76,9 @@ public class MainActivity extends AppCompatActivity implements RadioGroup.OnChec
             case R.id.btn_live:
                 index =2;
                 break;
-            case R.id.btn_audio:
-                index =3;
-                break;
+
             case R.id.btn_mine:
-                index =4;
+                index =3;
                 break;
         }
         Log.i(TAG,"---index=" +index);
