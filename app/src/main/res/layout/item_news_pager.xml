@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content">
+
+    <ImageView
+        android:id="@+id/iv_item_news_pager"
+        android:layout_width="70dp"
+        android:layout_height="70dp"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentTop="true"
+        android:src="@drawable/new_btn" />
+
+    <TextView
+        android:id="@+id/tv_title_item_news_pager"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_toRightOf="@id/iv_item_news_pager"
+        android:layout_marginLeft="10dp"
+        android:layout_alignParentTop="true"
+        android:text="标题"/>
+
+    <TextView
+        android:id="@+id/tv_source_item_news_pager"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignLeft="@id/tv_title_item_news_pager"
+        android:layout_alignParentBottom="true"
+        android:text="新闻源"/>
+
+</RelativeLayout>

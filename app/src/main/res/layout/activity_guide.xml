@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    >
+
+    <android.support.v4.view.ViewPager
+        android:id="@+id/vp_guide"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+
+        android:layout_weight="1"/>
+    <RelativeLayout
+        android:layout_width="wrap_content"
+        android:layout_height="20dp"
+        android:layout_alignParentBottom="true"
+        android:layout_centerHorizontal="true"
+        android:layout_marginBottom="20dp">
+
+
+    <LinearLayout
+        android:id="@+id/ll_point_guide"
+        android:layout_width="wrap_content"
+        android:layout_height="match_parent"
+        android:orientation="horizontal"
+        android:gravity="center"
+        >
+
+    </LinearLayout>
+        <!-- 滚动蓝色圆点-->
+    <ImageView
+        android:id="@+id/iv_point_blue_guide"
+        android:layout_width="20dp"
+        android:layout_height="20dp"
+
+        android:layout_alignLeft="@id/ll_point_guide"
+        android:background="@drawable/shape_point_circle_blue"/>
+        <!-- 左对白色圆点父容器 layout_alignLeft -->
+    </RelativeLayout>
+</RelativeLayout>
