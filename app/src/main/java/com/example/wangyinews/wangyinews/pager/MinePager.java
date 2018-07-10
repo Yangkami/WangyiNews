@@ -15,7 +15,7 @@ public class MinePager extends BasePager {
 
     @Override
     protected int loadLayoutById() {
-        return R.layout.pager_mine;
+        return R.layout.testlayout;
     }
 
     @Override
