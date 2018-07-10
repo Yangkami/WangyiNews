@@ -1,8 +1,10 @@
 package com.example.wangyinews.wangyinews.pager;
 
+import android.app.Activity;
 import android.content.Context;
 import android.view.LayoutInflater;
 import android.view.View;
+import android.widget.Button;
 import android.widget.TextView;
 
 import com.example.wangyinews.wangyinews.R;
@@ -67,7 +69,6 @@ public abstract class BasePager {
     public String getResString(int resId) {
         return mContext.getResources().getString(resId);
     }
-
 
 
 }
