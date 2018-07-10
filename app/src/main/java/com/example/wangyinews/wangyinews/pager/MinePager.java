@@ -7,6 +7,7 @@ import android.view.View;
 
 import com.example.wangyinews.wangyinews.R;
 import com.example.wangyinews.wangyinews.activity.LoginRegisterActivtiy;
+import com.example.wangyinews.wangyinews.activity.ScanCodeActivity;
 
 
 /**
@@ -41,7 +42,14 @@ public class MinePager extends BasePager {
                 intent.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK | Intent.FLAG_ACTIVITY_EXCLUDE_FROM_RECENTS);
                 mContext.startActivity(intent);
 
-
+            }
+        });
+        mRootView.findViewById(R.id.tv_code).setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent=new Intent(mContext,ScanCodeActivity.class);
+                intent.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK | Intent.FLAG_ACTIVITY_EXCLUDE_FROM_RECENTS);
+                mContext.startActivity(intent);
             }
         });
     }
