@@ -7,13 +7,14 @@ import android.util.Log;
 import android.widget.RadioGroup;
 
 import com.example.wangyinews.wangyinews.R;
-import com.example.wangyinews.wangyinews.pager.BasePager;
-import com.example.wangyinews.wangyinews.pager.MinePager;
-import com.example.wangyinews.wangyinews.pager.RadioPager;
 import com.example.wangyinews.wangyinews.adapter.MainPagerAdapter;
+import com.example.wangyinews.wangyinews.pager.BasePager;
 import com.example.wangyinews.wangyinews.pager.LivePager;
+import com.example.wangyinews.wangyinews.pager.MinePager;
 import com.example.wangyinews.wangyinews.pager.NewsPager;
+import com.example.wangyinews.wangyinews.pager.RadioPager;
 import com.example.wangyinews.wangyinews.pager.VideoPager;
+import com.example.wangyinews.wangyinews.video.fragments.VideoRecyclerViewFragment;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -23,6 +24,8 @@ public class MainActivity extends AppCompatActivity implements RadioGroup.OnChec
     private  static final String TAG="";
     private ViewPager vpMain;
     private RadioGroup rgMain;
+    //private LocalActivityManager manager;
+    //private Intent intent;
 
 
     @Override
@@ -30,6 +33,10 @@ public class MainActivity extends AppCompatActivity implements RadioGroup.OnChec
         Log.i(TAG,"-----");
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
+
+        //manager=new LocalActivityManager(this,true);
+        //manager.dispatchCreate(savedInstanceState);
+        //intent=new Intent(MainActivity.this, VideoListActivity.class);
 
         vpMain=findViewById(R.id.vp_main);
         rgMain=findViewById(R.id.rg_main);
@@ -68,6 +75,9 @@ public class MainActivity extends AppCompatActivity implements RadioGroup.OnChec
                 break;
             case R.id.btn_video:
                 index =1;
+                getSupportFragmentManager().beginTransaction()
+                        .add(R.id.fragment_container, new VideoRecyclerViewFragment())
+                        .commit();
                 break;
             case R.id.btn_live:
                 index =2;
