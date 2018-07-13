@@ -5,8 +5,11 @@ import android.content.Intent;
 import android.util.Log;
 import android.view.View;
 
+import com.example.wangyinews.wangyinews.activity.LoginRegisterActivity;
 import com.example.wangyinews.wangyinews.R;
-import com.example.wangyinews.wangyinews.activity.LoginRegisterActivtiy;
+import com.example.wangyinews.wangyinews.activity.FreeActivity;
+import com.example.wangyinews.wangyinews.activity.GoldActivity;
+import com.example.wangyinews.wangyinews.activity.JDActivity;
 import com.example.wangyinews.wangyinews.activity.ScanCodeActivity;
 
 
@@ -38,17 +41,37 @@ public class MinePager extends BasePager {
             public void onClick(View v) {
 
                 Log.i(TAG,"---------ONCLICK-----------");
-                Intent intent=new Intent(mContext,LoginRegisterActivtiy.class);
-                intent.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK | Intent.FLAG_ACTIVITY_EXCLUDE_FROM_RECENTS);
+                Intent intent=new Intent(mContext,LoginRegisterActivity.class);
+                //intent.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK | Intent.FLAG_ACTIVITY_EXCLUDE_FROM_RECENTS);
                 mContext.startActivity(intent);
-
             }
         });
+        mRootView.findViewById(R.id.ll_gold_shop).setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent=new Intent(mContext,GoldActivity.class);
+                mContext.startActivity(intent);
+            }
+        });
+        mRootView.findViewById(R.id.ll_jd).setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent=new Intent(mContext,JDActivity.class);
+                mContext.startActivity(intent);
+            }
+        });
+        mRootView.findViewById(R.id.ll_free).setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent=new Intent(mContext,FreeActivity.class);
+                mContext.startActivity(intent);
+            }
+        });
+
         mRootView.findViewById(R.id.tv_code).setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 Intent intent=new Intent(mContext,ScanCodeActivity.class);
-                intent.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK | Intent.FLAG_ACTIVITY_EXCLUDE_FROM_RECENTS);
                 mContext.startActivity(intent);
             }
         });

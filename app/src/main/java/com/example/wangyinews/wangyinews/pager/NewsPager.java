@@ -1,16 +1,24 @@
 package com.example.wangyinews.wangyinews.pager;
 
 import android.content.Context;
+import android.content.Intent;
 import android.graphics.Rect;
+import android.os.Handler;
 import android.support.v4.view.ViewPager;
 import android.support.v7.widget.RecyclerView;
 import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
+import android.widget.ListView;
 import android.widget.RadioButton;
 import android.widget.RadioGroup;
 
+import com.example.wangyinews.wangyinews.CoreApplication;
+import com.example.wangyinews.wangyinews.JsonAdapter;
+import com.example.wangyinews.wangyinews.JsonThread;
+import com.example.wangyinews.wangyinews.ListActivity;
 import com.example.wangyinews.wangyinews.R;
+import com.example.wangyinews.wangyinews.activity.GoldActivity;
 import com.example.wangyinews.wangyinews.adapter.NewsPagerAdapter;
 
 import java.util.ArrayList;
@@ -24,7 +32,9 @@ public class NewsPager extends BasePager implements RadioGroup.OnCheckedChangeLi
     private RadioGroup rgNews;
     private ViewPager vpNews;
 
+
     public NewsPager(Context context) {
+
         super(context);
     }
 
@@ -45,6 +55,7 @@ public class NewsPager extends BasePager implements RadioGroup.OnCheckedChangeLi
         //sclvNews=mRootView.findViewById(R.id.sclv_news_pager);
         //ivNews=mRootView.findViewById(R.id.iv_news_pager);
         //lvNews=mRootView.findViewById(R.id.lv_news_pager);
+
 
     }
 
@@ -67,7 +78,6 @@ public class NewsPager extends BasePager implements RadioGroup.OnCheckedChangeLi
                 rbtn.setChecked(true);
             }
             rgNews.addView(rbtn);
-
             pagers.add(new BaseNewsPager(mContext));
         }
         NewsPagerAdapter mAdapter=new NewsPagerAdapter(pagers);
@@ -84,6 +94,9 @@ public class NewsPager extends BasePager implements RadioGroup.OnCheckedChangeLi
 //
 //        rcvNews.setAdapter(mAdapter);
 
+//        listView= (ListView)mRootView.findViewById(R.id.lv_news_pager);
+//        handler=new Handler();//获得一个handler对象，为后面的各个线程提供处理UI的依据
+//        new JsonThread(mContext, listView, url,handler).start();
 
     }
 

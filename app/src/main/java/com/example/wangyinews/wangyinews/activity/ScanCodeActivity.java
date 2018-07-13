@@ -101,12 +101,12 @@ public class ScanCodeActivity extends Activity implements QRCodeView.Delegate {
 
     public void onClick(View v) {
         switch (v.getId()) {
-            case R.id.start_spot:
-                mQRCodeView.startSpot();
-                break;
-            case R.id.stop_spot:
-                mQRCodeView.stopSpot();
-                break;
+//            case R.id.start_spot:
+//                mQRCodeView.startSpot();
+//                break;
+//            case R.id.stop_spot:
+//                mQRCodeView.stopSpot();
+//                break;
             case R.id.open_flashlight:
                 mQRCodeView.openFlashlight();
                 break;

@@ -46,15 +46,15 @@ public class NewsLvAdapter extends BaseAdapter {
             holder=new ViewHolder();
             convertView= LayoutInflater.from(parent.getContext()).inflate(R.layout.item_news_pager,null);
 
-            holder.ivNews = convertView.findViewById(R.id.iv_item_news_pager);
-            holder.tvTitle = convertView.findViewById(R.id.tv_title_item_news_pager);
-            holder.tvSource = convertView.findViewById(R.id.tv_source_item_news_pager);
+            //holder.ivNews = convertView.findViewById(R.id.iv_item_news_pager);
+            //holder.tvTitle = convertView.findViewById(R.id.tv_title_item_news_pager);
+            //holder.tvSource = convertView.findViewById(R.id.tv_source_item_news_pager);
             convertView.setTag(holder);
         }else {
             holder=(ViewHolder)convertView.getTag();
         }
-        holder.tvTitle.setText(data.get(position));
-        holder.tvSource.setText(data.get(position));
+        //holder.tvTitle.setText(data.get(position));
+        //holder.tvSource.setText(data.get(position));
         return convertView;
     }
     class ViewHolder{

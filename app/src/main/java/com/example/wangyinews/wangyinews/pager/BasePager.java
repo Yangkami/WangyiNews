@@ -21,6 +21,7 @@ public abstract class BasePager {
     public static final String TAG = "BasePager";
 
     public Context mContext;
+
     public View mRootView;// 布局对象
     protected TextView tvCenter;
 
