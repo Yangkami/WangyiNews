@@ -20,6 +20,7 @@ import com.example.wangyinews.wangyinews.adapter.MainPagerAdapter;
 import com.example.wangyinews.wangyinews.pager.LivePager;
 import com.example.wangyinews.wangyinews.pager.NewsPager;
 import com.example.wangyinews.wangyinews.pager.VideoPager;
+import com.example.wangyinews.wangyinews.video.fragments.VideoRecyclerViewFragment;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -75,6 +76,9 @@ public class MainActivity extends AppCompatActivity implements RadioGroup.OnChec
                 break;
             case R.id.btn_video:
                 index =1;
+                getSupportFragmentManager().beginTransaction()
+                        .add(R.id.fragment_container, new VideoRecyclerViewFragment())
+                        .commit();
                 break;
             case R.id.btn_live:
                 index =2;
