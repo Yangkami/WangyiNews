@@ -31,15 +31,16 @@ import static android.content.ContentValues.TAG;
  */
 //访问目标网址，得到json数据，保存List<NewsBean>数据，等待传入JsonAdapter
 public class JsonThread extends Thread {
-    Context context;
+    Context mContext;
+    //Context context;
     ListView listView;
     String url;
     Handler handler;//关键参数 整个小项目中的核心之一，会在JsonThread和JsonAdapter，ImageThread中传递，用于更新UI界面
     List<NewsBean> newsBeans;
     JsonAdapter jsonAdapter;
 
-    public JsonThread(Context context, ListView listView, String url, Handler handler ) {
-        this.context=context;
+    public JsonThread(Context mContext, ListView listView, String url, Handler handler ) {
+        this.mContext=mContext;
         this.listView=listView;
         this.url=url;
         this.handler=handler;
@@ -107,7 +108,8 @@ public class JsonThread extends Thread {
                 @Override
                 public void run() {
 
-                    jsonAdapter=new JsonAdapter(context,handler, newsBeans);
+                    jsonAdapter=new JsonAdapter(mContext,handler, newsBeans);
+
                     //传递关键参数Newspager上下文对象context，Newspager主线程的handler对象,处理好的List<NewsBean>对象
                     listView.setAdapter(jsonAdapter);
                 }

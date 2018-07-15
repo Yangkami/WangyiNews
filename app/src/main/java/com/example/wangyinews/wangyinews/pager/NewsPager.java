@@ -33,6 +33,11 @@ public class NewsPager extends BasePager implements RadioGroup.OnCheckedChangeLi
     private ViewPager vpNews;
 
 
+
+    ListView listView;
+    Handler handler;
+    JsonAdapter jsonAdapter;
+    String url="http://112.74.165.209:3020/selectAllNews";//url。
     public NewsPager(Context context) {
 
         super(context);
@@ -56,6 +61,7 @@ public class NewsPager extends BasePager implements RadioGroup.OnCheckedChangeLi
         //ivNews=mRootView.findViewById(R.id.iv_news_pager);
         //lvNews=mRootView.findViewById(R.id.lv_news_pager);
 
+        listView= (ListView)mRootView.findViewById(R.id.lv_news_pager);
 
     }
 
@@ -63,9 +69,6 @@ public class NewsPager extends BasePager implements RadioGroup.OnCheckedChangeLi
     public void initData(Object data) {
        // tvCenter.setText("NewsPager");
         Log.i(TAG,"-----NewsPager----initData-------------");
-
-
-
         List<BaseNewsPager> pagers=new ArrayList<>();
         RadioButton rbtn=null;
         LayoutInflater lf = LayoutInflater.from(mContext);
@@ -83,20 +86,9 @@ public class NewsPager extends BasePager implements RadioGroup.OnCheckedChangeLi
         NewsPagerAdapter mAdapter=new NewsPagerAdapter(pagers);
         vpNews.setAdapter(mAdapter);
 
-        //给RecyclerView配置LinearLayoutManager
-//        LinearLayoutManager lm = new LinearLayoutManager(mContext);
-//        lm.setOrientation(OrientationHelper.HORIZONTAL);
-//        rcvNews.setLayoutManager(lm);
-//
-//        //RecycleView 增加边距
-//        int space = 60;
-//        rcvNews.addItemDecoration(new ItemSpace(space, 0));
-//
-//        rcvNews.setAdapter(mAdapter);
-
-//        listView= (ListView)mRootView.findViewById(R.id.lv_news_pager);
-//        handler=new Handler();//获得一个handler对象，为后面的各个线程提供处理UI的依据
-//        new JsonThread(mContext, listView, url,handler).start();
+       // mContext=null;
+        handler=new Handler();//获得一个handler对象，为后面的各个线程提供处理UI的依据
+        new JsonThread(mContext, listView, url,handler).start();
 
     }
 

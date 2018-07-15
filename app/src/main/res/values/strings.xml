@@ -6,5 +6,19 @@
     <string name="audio_main">电台</string>
     <string name="mine_main">我</string>
 
+    <string-array name="news_tags">
+        <item>头条</item>
+        <item>世界杯</item>
+        <item>推荐</item>
+        <item>江苏</item>
+        <item>国内</item>
+        <item>国际</item>
+        <item>在现场</item>
+        <item>江苏卫视</item>
+        <item>荔枝锐评</item>
+        <item>热播视频</item>
+        <item>荔枝教育</item>
+        <item>漫读</item>
+    </string-array >
 
 </resources>

@@ -23,15 +23,16 @@ import java.util.List;
 public class JsonAdapter extends BaseAdapter {
 
     List<NewsBean> newsBeans;
-    Context context;
+    //Context context;
+    Context mContext;
     LayoutInflater inflater;
     Handler handler;
 
-    public JsonAdapter(Context context, Handler handler, List<NewsBean> newsBeans) {
+    public JsonAdapter(Context mContext, Handler handler, List<NewsBean> newsBeans) {
         this.handler=handler;
-        this.context=context;
+        this.mContext=mContext;
         this.newsBeans = newsBeans;
-        inflater= LayoutInflater.from(context);//从MainActivity中上下文对象中获取LayoutInflater；所以说这个context,和handler对象很重要，贯穿整项目
+        inflater= LayoutInflater.from(mContext);//从pager中上下文对象中获取LayoutInflater；所以说这个context,和handler对象很重要，贯穿整项目
     }
 
     @Override

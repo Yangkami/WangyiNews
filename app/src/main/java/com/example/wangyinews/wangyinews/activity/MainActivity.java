@@ -1,6 +1,7 @@
 package com.example.wangyinews.wangyinews.activity;
 
 import android.content.Context;
+import android.content.Intent;
 import android.graphics.drawable.Drawable;
 import android.os.Bundle;
 import android.os.Handler;
@@ -13,6 +14,7 @@ import android.widget.RadioGroup;
 
 import com.example.wangyinews.wangyinews.JsonAdapter;
 import com.example.wangyinews.wangyinews.JsonThread;
+import com.example.wangyinews.wangyinews.ListActivity;
 import com.example.wangyinews.wangyinews.R;
 import com.example.wangyinews.wangyinews.pager.BasePager;
 import com.example.wangyinews.wangyinews.pager.MinePager;
@@ -82,6 +84,8 @@ public class MainActivity extends AppCompatActivity implements RadioGroup.OnChec
                 break;
             case R.id.btn_live:
                 index =2;
+//                getSupportFragmentManager().beginTransaction()
+//                        .add(R.id.ll_live,startActivity();
                 break;
 
             case R.id.btn_mine:

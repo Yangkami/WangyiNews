@@ -2,6 +2,7 @@ package com.example.wangyinews.wangyinews.pager;
 
 import android.app.Activity;
 import android.content.Context;
+import android.support.v7.app.AppCompatActivity;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.widget.Button;
@@ -16,7 +17,7 @@ import com.example.wangyinews.wangyinews.R;
  * 主页左侧页面父类
  * Created by pan on 2017/3/4.
  */
-public abstract class BasePager {
+public abstract class BasePager{
 
     public static final String TAG = "BasePager";
 
