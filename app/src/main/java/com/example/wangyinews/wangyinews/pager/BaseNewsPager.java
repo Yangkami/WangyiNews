@@ -6,7 +6,7 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.widget.ListView;
 
-import com.example.wangyinews.wangyinews.JsonThread;
+import com.example.wangyinews.wangyinews.adapter.JsonThread;
 import com.example.wangyinews.wangyinews.R;
 import com.example.wangyinews.wangyinews.adapter.NewsLvAdapter;
 

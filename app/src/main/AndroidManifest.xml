@@ -44,7 +44,7 @@
         <activity
             android:name=".activity.LoginRegisterActivity"
             android:theme="@style/Theme.AppCompat.Light.NoActionBar"/>
-        <activity android:name=".ListActivity"/>
+        <activity android:name=".activity.ListActivity"/>
     </application>
 
 </manifest>

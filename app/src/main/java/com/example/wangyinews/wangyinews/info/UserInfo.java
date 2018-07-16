@@ -1,6 +1,6 @@
 package com.example.wangyinews.wangyinews.info;
 
-import com.example.wangyinews.wangyinews.UserBean;
+import com.example.wangyinews.wangyinews.Bean.UserBean;
 
 public class UserInfo {
 

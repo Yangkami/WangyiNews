@@ -1,4 +1,4 @@
-package com.example.wangyinews.wangyinews;
+package com.example.wangyinews.wangyinews.adapter;
 
 import android.graphics.Bitmap;
 import android.graphics.BitmapFactory;

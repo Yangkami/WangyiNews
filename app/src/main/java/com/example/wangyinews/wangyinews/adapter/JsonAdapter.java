@@ -1,4 +1,4 @@
-package com.example.wangyinews.wangyinews;
+package com.example.wangyinews.wangyinews.adapter;
 
 /**
  * Created by silent night on 2018/7/13 0013.
@@ -12,6 +12,9 @@ import android.view.ViewGroup;
 import android.widget.BaseAdapter;
 import android.widget.ImageView;
 import android.widget.TextView;
+
+import com.example.wangyinews.wangyinews.Bean.NewsBean;
+import com.example.wangyinews.wangyinews.R;
 
 import java.util.List;
 

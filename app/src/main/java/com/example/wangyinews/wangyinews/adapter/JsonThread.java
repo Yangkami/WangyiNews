@@ -1,4 +1,4 @@
-package com.example.wangyinews.wangyinews;
+package com.example.wangyinews.wangyinews.adapter;
 
 /**
  * Created by silent night on 2018/7/13 0013.
@@ -21,8 +21,8 @@ import java.net.MalformedURLException;
 import java.net.URL;
 import java.util.ArrayList;
 import java.util.List;
-import com.example.wangyinews.wangyinews.JsonAdapter;
-import com.example.wangyinews.wangyinews.pager.BasePager;
+
+import com.example.wangyinews.wangyinews.Bean.NewsBean;
 
 import static android.content.ContentValues.TAG;
 

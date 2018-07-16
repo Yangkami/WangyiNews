@@ -5,7 +5,6 @@ import android.content.Intent;
 import android.util.Log;
 import android.view.View;
 
-import com.example.wangyinews.wangyinews.ListActivity;
 import com.example.wangyinews.wangyinews.activity.LoginRegisterActivity;
 import com.example.wangyinews.wangyinews.R;
 import com.example.wangyinews.wangyinews.activity.FreeActivity;

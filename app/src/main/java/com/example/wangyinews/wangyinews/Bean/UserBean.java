@@ -1,4 +1,4 @@
-package com.example.wangyinews.wangyinews;
+package com.example.wangyinews.wangyinews.Bean;
 
 public class UserBean {
     private String user_name;

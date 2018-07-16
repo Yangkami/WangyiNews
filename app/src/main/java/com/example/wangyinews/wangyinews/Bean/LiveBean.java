@@ -1,4 +1,4 @@
-package com.example.wangyinews.wangyinews;
+package com.example.wangyinews.wangyinews.Bean;
 
 import android.graphics.drawable.Drawable;
 

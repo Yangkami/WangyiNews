@@ -8,7 +8,7 @@ import android.widget.BaseAdapter;
 import android.widget.ImageView;
 import android.widget.TextView;
 
-import com.example.wangyinews.wangyinews.LiveBean;
+import com.example.wangyinews.wangyinews.Bean.LiveBean;
 import com.example.wangyinews.wangyinews.R;
 
 import java.util.ArrayList;

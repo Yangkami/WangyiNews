@@ -1,4 +1,4 @@
-package com.example.wangyinews.wangyinews;
+package com.example.wangyinews.wangyinews.Bean;
 
 /**
  * Created by silent night on 2018/7/13 0013.

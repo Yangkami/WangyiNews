@@ -1,20 +1,11 @@
 package com.example.wangyinews.wangyinews.activity;
 
-import android.content.Context;
-import android.content.Intent;
-import android.graphics.drawable.Drawable;
 import android.os.Bundle;
-import android.os.Handler;
 import android.support.v4.view.ViewPager;
 import android.support.v7.app.AppCompatActivity;
 import android.util.Log;
-import android.widget.ListView;
-import android.widget.RadioButton;
 import android.widget.RadioGroup;
 
-import com.example.wangyinews.wangyinews.JsonAdapter;
-import com.example.wangyinews.wangyinews.JsonThread;
-import com.example.wangyinews.wangyinews.ListActivity;
 import com.example.wangyinews.wangyinews.R;
 import com.example.wangyinews.wangyinews.pager.BasePager;
 import com.example.wangyinews.wangyinews.pager.MinePager;

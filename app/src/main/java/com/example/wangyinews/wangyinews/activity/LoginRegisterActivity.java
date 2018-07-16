@@ -14,7 +14,7 @@ import android.widget.TextView;
 import android.widget.Toast;
 
 import com.example.wangyinews.wangyinews.R;
-import com.example.wangyinews.wangyinews.UserBean;
+import com.example.wangyinews.wangyinews.Bean.UserBean;
 import com.example.wangyinews.wangyinews.info.UserInfo;
 
 import org.json.JSONException;

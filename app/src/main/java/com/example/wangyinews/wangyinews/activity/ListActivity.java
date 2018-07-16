@@ -1,10 +1,14 @@
-package com.example.wangyinews.wangyinews;
+package com.example.wangyinews.wangyinews.activity;
 
 import android.content.Context;
 import android.os.Bundle;
 import android.os.Handler;
 import android.support.v7.app.AppCompatActivity;
 import android.widget.ListView;
+
+import com.example.wangyinews.wangyinews.adapter.JsonAdapter;
+import com.example.wangyinews.wangyinews.adapter.JsonThread;
+import com.example.wangyinews.wangyinews.R;
 
 /**
  * Created by silent night on 2018/7/13 0013.

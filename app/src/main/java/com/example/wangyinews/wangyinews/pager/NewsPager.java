@@ -1,9 +1,7 @@
 package com.example.wangyinews.wangyinews.pager;
 
 import android.content.Context;
-import android.content.Intent;
 import android.graphics.Rect;
-import android.os.Handler;
 import android.support.v4.view.ViewPager;
 import android.support.v7.widget.RecyclerView;
 import android.util.Log;
@@ -13,12 +11,7 @@ import android.widget.ListView;
 import android.widget.RadioButton;
 import android.widget.RadioGroup;
 
-import com.example.wangyinews.wangyinews.CoreApplication;
-import com.example.wangyinews.wangyinews.JsonAdapter;
-import com.example.wangyinews.wangyinews.JsonThread;
-import com.example.wangyinews.wangyinews.ListActivity;
 import com.example.wangyinews.wangyinews.R;
-import com.example.wangyinews.wangyinews.activity.GoldActivity;
 import com.example.wangyinews.wangyinews.adapter.NewsPagerAdapter;
 
 import java.util.ArrayList;

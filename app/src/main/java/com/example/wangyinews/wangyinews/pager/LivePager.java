@@ -3,7 +3,7 @@ package com.example.wangyinews.wangyinews.pager;
 import android.content.Context;
 import android.widget.ListView;
 
-import com.example.wangyinews.wangyinews.LiveBean;
+import com.example.wangyinews.wangyinews.Bean.LiveBean;
 import com.example.wangyinews.wangyinews.R;
 import com.example.wangyinews.wangyinews.adapter.TextImageAdapter;
 
