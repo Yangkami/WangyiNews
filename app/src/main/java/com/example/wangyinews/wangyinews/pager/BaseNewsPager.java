@@ -1,10 +1,12 @@
 package com.example.wangyinews.wangyinews.pager;
 
 import android.content.Context;
+import android.os.Handler;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.widget.ListView;
 
+import com.example.wangyinews.wangyinews.JsonThread;
 import com.example.wangyinews.wangyinews.R;
 import com.example.wangyinews.wangyinews.adapter.NewsLvAdapter;
 
@@ -25,6 +27,9 @@ public class BaseNewsPager {
     public Context mContext;
     public View mRootView;// 布局对象
 
+    Handler handler;
+    String url="http://112.74.165.209:3020/selectAllNews";//url。
+
 
     protected LayoutInflater lf;
     private ListView lvNews;
@@ -38,6 +43,7 @@ public class BaseNewsPager {
 
 
         initView();
+        initData();
     }
 
     protected int loadLayoutById() {
@@ -67,8 +73,9 @@ public class BaseNewsPager {
         lvNews.setAdapter(lvAdapter);
     }
 
-    public void initData(Object data) {
-
+    public void initData() {
+        handler=new Handler();
+        new JsonThread(mContext, lvNews, url,handler).start();
     }
 
 

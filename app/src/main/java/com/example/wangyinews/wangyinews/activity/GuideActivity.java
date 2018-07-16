@@ -25,7 +25,7 @@ public class GuideActivity extends AppCompatActivity implements View.OnClickList
     private static final String TAG = "";
     private ViewPager vpGuide;
     private LinearLayout llPoint;
-    private  int[]imgids=new int[]{R.drawable.b01,R.drawable.b02,R.drawable.b03,R.drawable.b04_1080x1920};
+    private  int[]imgids=new int[]{R.drawable.b01,R.drawable.b02,R.drawable.b03,R.drawable.b04};
     private View point;
     private int mPointWidth;
     @Override

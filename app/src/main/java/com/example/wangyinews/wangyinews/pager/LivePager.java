@@ -11,7 +11,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class LivePager extends BasePager {
-    public List<LiveBean> list=new ArrayList<>();
+    public List<LiveBean> list;
     ListView listView=null;
     public LivePager(Context context) {
         super(context);
@@ -32,6 +32,7 @@ public class LivePager extends BasePager {
         list.add(new LiveBean("西瓜", mContext.getResources().getDrawable(R.drawable.new3)));
         list.add(new LiveBean("网易新闻", mContext.getResources().getDrawable(R.drawable.new4)));
         list.add(new LiveBean("新闻", mContext.getResources().getDrawable(R.drawable.new5)));
+
         listView= mRootView.findViewById(R.id.list);
         TextImageAdapter textImageAdapter = new TextImageAdapter(mContext,list);
         listView.setAdapter(textImageAdapter);
@@ -39,6 +40,6 @@ public class LivePager extends BasePager {
 
     @Override
     public void initData(Object data) {
-        tvCenter.setText("LivePager");
+//        tvCenter.setText("LivePager");
     }
 }

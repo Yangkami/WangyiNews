@@ -31,13 +31,8 @@ public class NewsPager extends BasePager implements RadioGroup.OnCheckedChangeLi
    // private ListView lvNews;
     private RadioGroup rgNews;
     private ViewPager vpNews;
-
-
-
     ListView listView;
-    Handler handler;
-    JsonAdapter jsonAdapter;
-    String url="http://112.74.165.209:3020/selectAllNews";//url。
+
     public NewsPager(Context context) {
 
         super(context);
@@ -51,9 +46,6 @@ public class NewsPager extends BasePager implements RadioGroup.OnCheckedChangeLi
     @Override
     public void initViews() {
 
-        //mRootView.findViewById(R.id.rev_news_pager);
-       // rcvNews=mRootView.findViewById(R.id.rev_news_pager);
-
         rgNews = mRootView.findViewById(R.id.rg_news_pager);
         vpNews=mRootView.findViewById(R.id.vp_news_pager);
         rgNews.setOnCheckedChangeListener(this);
@@ -61,21 +53,16 @@ public class NewsPager extends BasePager implements RadioGroup.OnCheckedChangeLi
         //ivNews=mRootView.findViewById(R.id.iv_news_pager);
         //lvNews=mRootView.findViewById(R.id.lv_news_pager);
 
-        listView= (ListView)mRootView.findViewById(R.id.lv_news_pager);
-
-    }
-
-    @Override
-    public void initData(Object data) {
-       // tvCenter.setText("NewsPager");
-        Log.i(TAG,"-----NewsPager----initData-------------");
+        String [] tags = mContext.getResources().getStringArray(R.array.news_tags);
         List<BaseNewsPager> pagers=new ArrayList<>();
         RadioButton rbtn=null;
         LayoutInflater lf = LayoutInflater.from(mContext);
-        for (int i=0;i<=30;i++){
+        final int count = tags.length;
+        for (int i=0;i<=count;i++){
             //tags.add("标签"+i);
             rbtn = (RadioButton) lf.inflate(R.layout.rbtn_news_pager, null);
-            rbtn.setText("标签" + i);
+            //rbtn.setText(tags[i]);
+            rbtn.setText("标签"+i);
             rbtn.setId(i);
             if (i == 0) {
                 rbtn.setChecked(true);
@@ -86,9 +73,15 @@ public class NewsPager extends BasePager implements RadioGroup.OnCheckedChangeLi
         NewsPagerAdapter mAdapter=new NewsPagerAdapter(pagers);
         vpNews.setAdapter(mAdapter);
 
-       // mContext=null;
-        handler=new Handler();//获得一个handler对象，为后面的各个线程提供处理UI的依据
-        new JsonThread(mContext, listView, url,handler).start();
+    }
+
+    @Override
+    public void initData(Object data) {
+       // tvCenter.setText("NewsPager");
+        Log.i(TAG,"-----NewsPager----initData-------------");
+
+        //handler=new Handler();//获得一个handler对象，为后面的各个线程提供处理UI的依据
+        Log.i(TAG, "-----initData-----------------listView = "+ listView+", mContext = "+ mContext);
 
     }
 

@@ -33,6 +33,10 @@ public class MainActivity extends AppCompatActivity implements RadioGroup.OnChec
     private ViewPager vpMain;
     private RadioGroup rgMain;
 
+//    Context context=this;
+//    ListView listView;
+//    Handler handler;
+//    String url="http://112.74.165.209:3020/selectAllNews";//url。
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         Log.i(TAG,"-----");
@@ -48,6 +52,9 @@ public class MainActivity extends AppCompatActivity implements RadioGroup.OnChec
 
 
         //rgMain.setOnCheckedChangeListener(this);
+//        listView= (ListView)findViewById(R.id.lv_news_pager);
+//        handler=new Handler();//获得一个handler对象，为后面的各个线程提供处理UI的依据
+//        new JsonThread(context, listView, url,handler).start();
 
         initData();
 
@@ -57,7 +64,6 @@ public class MainActivity extends AppCompatActivity implements RadioGroup.OnChec
         pagers.add(new NewsPager(this));
         pagers.add(new VideoPager(this));
         pagers.add(new LivePager(this));
-        //pagers.add(new RadioPager(this));
         pagers.add(new MinePager(this));
 
         //适配器
@@ -84,8 +90,6 @@ public class MainActivity extends AppCompatActivity implements RadioGroup.OnChec
                 break;
             case R.id.btn_live:
                 index =2;
-//                getSupportFragmentManager().beginTransaction()
-//                        .add(R.id.ll_live,startActivity();
                 break;
 
             case R.id.btn_mine:

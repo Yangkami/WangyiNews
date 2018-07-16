@@ -24,15 +24,15 @@ public class JsonAdapter extends BaseAdapter {
 
     List<NewsBean> newsBeans;
     //Context context;
-    Context mContext;
+    Context context;
     LayoutInflater inflater;
     Handler handler;
 
-    public JsonAdapter(Context mContext, Handler handler, List<NewsBean> newsBeans) {
+    public JsonAdapter(Context context, Handler handler, List<NewsBean> newsBeans) {
         this.handler=handler;
-        this.mContext=mContext;
+        this.context=context;
         this.newsBeans = newsBeans;
-        inflater= LayoutInflater.from(mContext);//从pager中上下文对象中获取LayoutInflater；所以说这个context,和handler对象很重要，贯穿整项目
+        inflater= LayoutInflater.from(context);//从pager中上下文对象中获取LayoutInflater；所以说这个context,和handler对象很重要，贯穿整项目
     }
 
     @Override
@@ -62,18 +62,18 @@ public class JsonAdapter extends BaseAdapter {
         }else {
             holder= (ViewHolder) convertView.getTag(); //获取tag
         }
-        //System.out.println(String.valueOf(newsBeans.get(position).news_id));//测试数据是否正常
-        holder.news_id.setText(String.valueOf(newsBeans.get(position).news_id));
+        System.out.println(String.valueOf(newsBeans.get(position).news_id)+"news_id");//测试数据是否正常
+        //holder.news_id.setText(String.valueOf(newsBeans.get(position).news_id));
         holder.image_id.setText(newsBeans.get(position).image_id);
-        //System.out.println(newsBeans.get(position).image_id);
+        System.out.println(newsBeans.get(position).image_id+"image_id");
 
         holder.image_id.setText(newsBeans.get(position).news_kind);
-        holder.image_id.setText(newsBeans.get(position).news_title);
+        holder.tvtitle.setText(newsBeans.get(position).news_title);
         holder.image_id.setText(newsBeans.get(position).user_id);
         holder.image_id.setText(newsBeans.get(position).good_num);
         holder.image_id.setText(newsBeans.get(position).see_num);
         holder.image_id.setText(newsBeans.get(position).comment_num);
-        holder.image_id.setText(newsBeans.get(position).news_submit_time);
+        holder.tvnewstime.setText(newsBeans.get(position).news_submit_time);
         holder.image_id.setText(newsBeans.get(position).news_content);
 
 
@@ -88,12 +88,14 @@ public class JsonAdapter extends BaseAdapter {
         public TextView news_id;
         public ImageView image;
         public TextView tvtitle;
+        public TextView tvnewstime;
 
         public ViewHolder(View view){
             image_id= (TextView) view.findViewById(R.id.name);
-            news_id= (TextView) view.findViewById(R.id.age);
+            //news_id= (TextView) view.findViewById(R.id.age);
             image= (ImageView) view.findViewById(R.id.imageView);
             tvtitle=(TextView)view.findViewById(R.id.tv_title);
+            tvnewstime=(TextView)view.findViewById(R.id.tv_news_time);
         }
     }
 }
