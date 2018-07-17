@@ -5,8 +5,11 @@ import android.os.Bundle;
 import android.os.Handler;
 import android.os.Message;
 import android.support.v7.app.AppCompatActivity;
+import android.util.Log;
+import android.view.View;
 import android.view.Window;
 import android.view.WindowManager;
+import android.widget.Button;
 import android.widget.ImageView;
 
 import com.bumptech.glide.Glide;
@@ -14,9 +17,10 @@ import com.example.wangyinews.wangyinews.R;
 import com.example.wangyinews.wangyinews.helper.SharePrefrenceHelper;
 
 public class SplashActivity extends AppCompatActivity {
-    private static final int DELAY=3000;
+    private  int DELAY=3000;
     private static final int TO_GUIDE=1010;
     private static final String URL="http://www.cnr.cn/mthz/20180711/W020180711523528710841.jpg";
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -29,8 +33,26 @@ public class SplashActivity extends AppCompatActivity {
 
         ImageView ivSplash=findViewById(R.id.iv_splash);
         //Picasso.with(this.getApplicationContext()).load(URL).into(ivSplash);
-
         Glide.with(this.getApplicationContext()).load(URL).into(ivSplash);
+
+        Button btnjump=findViewById(R.id.btn_jump);
+        btnjump.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+
+//                SharePrefrenceHelper sph = new SharePrefrenceHelper(getApplicationContext());
+//                sph.open("first_run");
+//                boolean isNotFirstRun = sph.getBoolean("is_not_first_run");
+//                if (!isNotFirstRun) {//第一次启动，跳转到引导页
+//                    gotoGuideActivity();
+//                } else {//跳到专业
+//                    gotoMainActivity();
+//                }
+                DELAY=0;
+
+            }
+        });
+
     }
     @Override
     protected  void onResume(){
@@ -66,8 +88,10 @@ public class SplashActivity extends AppCompatActivity {
                     boolean isNotFirstRun = sph.getBoolean("is_not_first_run");
                     if (!isNotFirstRun) {//第一次启动，跳转到引导页
                         gotoGuideActivity();
+
                     } else {//跳到专业
                         gotoMainActivity();
+                        //this.removeMessages(0);
                     }
 
                     break;

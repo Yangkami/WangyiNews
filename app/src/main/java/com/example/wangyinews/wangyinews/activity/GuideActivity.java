@@ -96,19 +96,6 @@ public class GuideActivity extends AppCompatActivity implements View.OnClickList
                     }
                 });
 
-//        point.getViewTreeObserver().addOnGlobalLayoutListener(new ViewTreeObserver.OnGlobalLayoutListener() {
-//            @Override
-//            public void onGlobalLayout() {
-//                point.getViewTreeObserver().removeGlobalOnLayoutListener(this);
-//                int len = llPoint.getChildAt(0).getLeft();
-//                RelativeLayout.LayoutParams params = (RelativeLayout.LayoutParams) point.getLayoutParams();// 获取当前红点的布局参数
-//                params.leftMargin = len;// 设置左边距
-//
-//                point.setLayoutParams(params);// 重新给小蓝点设置布局参数
-//            }
-//        });
-
-
     }
 
 

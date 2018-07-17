@@ -1,10 +1,12 @@
 package com.example.wangyinews.wangyinews.activity;
 
+import android.annotation.SuppressLint;
 import android.os.Bundle;
 import android.support.v4.view.ViewPager;
 import android.support.v7.app.AppCompatActivity;
 import android.util.Log;
 import android.widget.RadioGroup;
+import android.widget.SearchView;
 
 import com.example.wangyinews.wangyinews.R;
 import com.example.wangyinews.wangyinews.pager.BasePager;
@@ -23,7 +25,6 @@ public class MainActivity extends AppCompatActivity implements RadioGroup.OnChec
     private  static final String TAG="";
     private ViewPager vpMain;
     private RadioGroup rgMain;
-
 //    Context context=this;
 //    ListView listView;
 //    Handler handler;
@@ -39,6 +40,7 @@ public class MainActivity extends AppCompatActivity implements RadioGroup.OnChec
 
         rgMain.setOnCheckedChangeListener(this);
         vpMain.setOnPageChangeListener(this);
+
 
 
 

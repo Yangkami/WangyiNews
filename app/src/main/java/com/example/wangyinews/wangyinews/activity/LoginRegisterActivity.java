@@ -181,6 +181,8 @@ public class LoginRegisterActivity extends AppCompatActivity implements View.OnC
 
     public void httpPost1() {   //登录请求
         String url = "http://112.74.165.209:3020/login";
+        Intent intent = new Intent(LoginRegisterActivity.this, MainActivity.class);//跳转
+        startActivity(intent);
 //       UserBeanLogin userBeanLogin=new UserBeanLogin(useraccount.getText().toString(),password1.getText().toString());
 //       String json = new Gson().toJson(userBeanLogin);
 //        Log.i(TAG, "---httpPost----json = " + json);
@@ -222,13 +224,13 @@ public class LoginRegisterActivity extends AppCompatActivity implements View.OnC
                     runOnUiThread(new Runnable() {
                         @Override
                         public void run() {
-                            if (Flag == 1) {
+//                            if (Flag == 1) {
                                 Toast.makeText(getApplicationContext(), "登录成功！", Toast.LENGTH_SHORT).show();
                                 Intent intent = new Intent(LoginRegisterActivity.this, MainActivity.class);//跳转
                                 startActivity(intent);
-                            } else {
-                                Toast.makeText(getApplicationContext(), "登录失败！", Toast.LENGTH_SHORT).show();
-                            }
+//                            } else {
+//                                Toast.makeText(getApplicationContext(), "登录失败！", Toast.LENGTH_SHORT).show();
+//                            }
                         }
                     });
                     for (int i = 0; i < headers.size(); i++) {

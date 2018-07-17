@@ -35,7 +35,34 @@ public class MinePager extends BasePager {
     @Override
     public void initViews() {
         Log.i(TAG,"-----MinePager----initView-------------");
-
+        mRootView.findViewById(R.id.ll_history).setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent=new Intent(mContext,GoldActivity.class);//历史
+                //mContext.startActivity(intent);
+            }
+        });
+        mRootView.findViewById(R.id.ll_return).setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent=new Intent(mContext,GoldActivity.class);//跟帖
+                //mContext.startActivity(intent);
+            }
+        });
+        mRootView.findViewById(R.id.tv_my_message).setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent=new Intent(mContext,GoldActivity.class);//我的消息
+                //mContext.startActivity(intent);
+            }
+        });
+        mRootView.findViewById(R.id.tv_my_Collection).setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent=new Intent(mContext,GoldActivity.class);//订阅
+                //mContext.startActivity(intent);
+            }
+        });
         mRootView.findViewById(R.id.btn_denglu).setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -46,10 +73,17 @@ public class MinePager extends BasePager {
                 mContext.startActivity(intent);
             }
         });
+        mRootView.findViewById(R.id.tv_gold_renwu).setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent=new Intent(mContext,GoldActivity.class);//金币任务
+                mContext.startActivity(intent);
+            }
+        });
         mRootView.findViewById(R.id.ll_gold_shop).setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent intent=new Intent(mContext,GoldActivity.class);
+                Intent intent=new Intent(mContext,GoldActivity.class);//金币商城
                 mContext.startActivity(intent);
             }
         });
@@ -58,6 +92,13 @@ public class MinePager extends BasePager {
             public void onClick(View v) {
                 Intent intent=new Intent(mContext,JDActivity.class);
                 mContext.startActivity(intent);
+            }
+        });
+        mRootView.findViewById(R.id.tv_my_money).setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent=new Intent(mContext,FreeActivity.class);//我的钱包
+                //mContext.startActivity(intent);
             }
         });
         mRootView.findViewById(R.id.ll_free).setOnClickListener(new View.OnClickListener() {
@@ -73,6 +114,13 @@ public class MinePager extends BasePager {
             public void onClick(View v) {
                 Intent intent=new Intent(mContext,ScanCodeActivity.class);
                 mContext.startActivity(intent);
+            }
+        });
+        mRootView.findViewById(R.id.tv_setting).setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent=new Intent(mContext,GoldActivity.class);//设置
+                //mContext.startActivity(intent);
             }
         });
     }

@@ -10,6 +10,7 @@ import android.view.View;
 import android.widget.ListView;
 import android.widget.RadioButton;
 import android.widget.RadioGroup;
+import android.widget.SearchView;
 
 import com.example.wangyinews.wangyinews.R;
 import com.example.wangyinews.wangyinews.adapter.NewsPagerAdapter;
@@ -17,7 +18,7 @@ import com.example.wangyinews.wangyinews.adapter.NewsPagerAdapter;
 import java.util.ArrayList;
 import java.util.List;
 
-public class NewsPager extends BasePager implements RadioGroup.OnCheckedChangeListener {
+public class NewsPager extends BasePager implements RadioGroup.OnCheckedChangeListener, ViewPager.OnPageChangeListener {
     private RecyclerView rcvNews;
     //private ScrollView sclvNews;
    // private ImageView ivNews;
@@ -25,7 +26,8 @@ public class NewsPager extends BasePager implements RadioGroup.OnCheckedChangeLi
     private RadioGroup rgNews;
     private ViewPager vpNews;
     ListView listView;
-
+    private int preCheckedId = -1;
+    private int prePosition = -1;
     public NewsPager(Context context) {
 
         super(context);
@@ -51,11 +53,12 @@ public class NewsPager extends BasePager implements RadioGroup.OnCheckedChangeLi
         RadioButton rbtn=null;
         LayoutInflater lf = LayoutInflater.from(mContext);
         final int count = tags.length;
-        for (int i=0;i<=count;i++){
+        for (int i=0;i<count;i++){
             //tags.add("标签"+i);
+            //Log.i(TAG,"---tags-------------"+tags[i]);
             rbtn = (RadioButton) lf.inflate(R.layout.rbtn_news_pager, null);
-            //rbtn.setText(tags[i]);
-            rbtn.setText("标签"+i);
+            rbtn.setText(tags[i]);
+           // rbtn.setText("标签"+i);
             rbtn.setId(i);
             if (i == 0) {
                 rbtn.setChecked(true);
@@ -73,38 +76,44 @@ public class NewsPager extends BasePager implements RadioGroup.OnCheckedChangeLi
        // tvCenter.setText("NewsPager");
         Log.i(TAG,"-----NewsPager----initData-------------");
 
-        //handler=new Handler();//获得一个handler对象，为后面的各个线程提供处理UI的依据
-        Log.i(TAG, "-----initData-----------------listView = "+ listView+", mContext = "+ mContext);
 
     }
 
     @Override
     public void onCheckedChanged(RadioGroup group, int checkedId) {
-        Log.i(TAG, "--------onCheckedChanged--------index = " + checkedId);
+        if (preCheckedId == checkedId) {
+            return;
+        }
+
+        Log.i(TAG, "--------onCheckedChanged--------checkedId = " + checkedId);
+        preCheckedId = checkedId;
         int position = checkedId;
         if (position >= 0) {
             vpNews.setCurrentItem(checkedId);
         }
     }
+    @Override
+    public void onPageScrolled(int position, float positionOffset, int positionOffsetPixels) {
 
-
-    public class ItemSpace extends RecyclerView.ItemDecoration{
-        private int space;
-        private int space2;
-
-        public ItemSpace(int space,int space2){
-
-            this.space = space;
-            this.space2 = space2;
-        }
-
-        @Override
-        public void getItemOffsets(Rect outRect, View view, RecyclerView parent, RecyclerView.State state) {
-//            super.getItemOffsets(outRect, view, parent, state);
-            outRect.left = space;
-            outRect.top = space2;
-
-        }
     }
+
+    @Override
+    public void onPageSelected(int position) {
+        if (prePosition == position) {
+            return;
+        }
+
+        Log.i(TAG, "--------onPageSelected--------position = " + position);
+        prePosition = position;
+        //pagers.get(position).initData(position);
+        rgNews.check(rgNews.getChildAt(position).getId());
+
+    }
+
+    @Override
+    public void onPageScrollStateChanged(int state) {
+    }
+
+
 
 }

@@ -6,6 +6,7 @@ import android.support.v7.app.AppCompatActivity;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.widget.Button;
+import android.widget.SearchView;
 import android.widget.TextView;
 
 import com.example.wangyinews.wangyinews.R;
@@ -24,6 +25,7 @@ public abstract class BasePager{
     public Context mContext;
 
     public View mRootView;// 布局对象
+
     protected TextView tvCenter;
 
 
