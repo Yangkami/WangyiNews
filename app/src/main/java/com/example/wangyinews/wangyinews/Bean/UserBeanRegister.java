@@ -1,5 +1,6 @@
 package com.example.wangyinews.wangyinews.Bean;
 
+
 public class UserBeanRegister {
     private String username;
     private String iphone;

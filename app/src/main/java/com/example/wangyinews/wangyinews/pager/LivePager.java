@@ -1,10 +1,16 @@
 package com.example.wangyinews.wangyinews.pager;
 
 import android.content.Context;
+import android.content.Intent;
+import android.view.View;
+import android.widget.AdapterView;
 import android.widget.ListView;
+import android.widget.Toast;
 
 import com.example.wangyinews.wangyinews.Bean.LiveBean;
+import com.example.wangyinews.wangyinews.LocalVideoActivity;
 import com.example.wangyinews.wangyinews.R;
+import com.example.wangyinews.wangyinews.VideoListActivity;
 import com.example.wangyinews.wangyinews.adapter.TextImageAdapter;
 
 import java.util.ArrayList;
@@ -36,6 +42,15 @@ public class LivePager extends BasePager {
         listView= mRootView.findViewById(R.id.list);
         TextImageAdapter textImageAdapter = new TextImageAdapter(mContext,list);
         listView.setAdapter(textImageAdapter);
+
+        listView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
+            @Override
+            public void onItemClick(AdapterView<?> adapterView, View view, int i, long l) {
+                Toast.makeText(mContext.getApplicationContext(),"跳转至直播间！",Toast.LENGTH_SHORT).show();
+                Intent intent =new Intent(mContext,LocalVideoActivity.class);//跳转
+                mContext.startActivity(intent);
+            }
+        });
     }
 
     @Override

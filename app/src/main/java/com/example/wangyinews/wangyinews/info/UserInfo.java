@@ -1,12 +1,10 @@
 package com.example.wangyinews.wangyinews.info;
 
-import com.example.wangyinews.wangyinews.Bean.UserBean;
-
 public class UserInfo {
 
     private static UserInfo instance = new UserInfo();
 
-    private UserBean userBean;
+    private com.example.wangyinews.wangyinews.Bean.UserBean userBean;
 
     private UserInfo(){}
 
@@ -14,11 +12,11 @@ public class UserInfo {
         return instance;
     }
 
-    public UserBean getUserBean() {
+    public com.example.wangyinews.wangyinews.Bean.UserBean getUserBean() {
         return userBean;
     }
 
-    public void setUserBean(UserBean userBean) {
+    public void setUserBean(com.example.wangyinews.wangyinews.Bean.UserBean userBean) {
         this.userBean = userBean;
     }
 }

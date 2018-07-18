@@ -35,11 +35,11 @@ public class SplashActivity extends AppCompatActivity {
         //Picasso.with(this.getApplicationContext()).load(URL).into(ivSplash);
         Glide.with(this.getApplicationContext()).load(URL).into(ivSplash);
 
-        Button btnjump=findViewById(R.id.btn_jump);
-        btnjump.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-
+//        Button btnjump=findViewById(R.id.btn_jump);
+//        btnjump.setOnClickListener(new View.OnClickListener() {
+//            @Override
+//            public void onClick(View view) {
+//
 //                SharePrefrenceHelper sph = new SharePrefrenceHelper(getApplicationContext());
 //                sph.open("first_run");
 //                boolean isNotFirstRun = sph.getBoolean("is_not_first_run");
@@ -48,10 +48,9 @@ public class SplashActivity extends AppCompatActivity {
 //                } else {//跳到专业
 //                    gotoMainActivity();
 //                }
-                DELAY=0;
-
-            }
-        });
+//
+//            }
+//        });
 
     }
     @Override
