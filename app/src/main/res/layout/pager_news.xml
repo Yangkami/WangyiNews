@@ -16,18 +16,18 @@
             android:layout_width="match_parent"
             android:layout_height="35dp"
             android:orientation="horizontal"
-            android:background="#ee1c1c">
+            android:background="#487edb">
             <ImageView
                 android:layout_width="35dp"
                 android:layout_height="30dp"
                 android:layout_marginLeft="5dp"
-                android:src="@drawable/skin1_news_search_view_logo"/>
+                android:src="@drawable/chicken"/>
             <ImageView
                 android:layout_width="32dp"
                 android:layout_height="32dp"
                 android:layout_marginRight="5dp"
                 android:layout_alignParentRight="true"
-                android:src="@drawable/skin1_news_main_24_hour_news_icon"/>
+                android:src="@drawable/egg"/>
 
         </RelativeLayout>
 

@@ -14,6 +14,7 @@ import com.example.wangyinews.wangyinews.pager.MinePager;
 import com.example.wangyinews.wangyinews.adapter.MainPagerAdapter;
 import com.example.wangyinews.wangyinews.pager.LivePager;
 import com.example.wangyinews.wangyinews.pager.NewsPager;
+import com.example.wangyinews.wangyinews.pager.NewsWebPager;
 import com.example.wangyinews.wangyinews.pager.VideoPager;
 import com.example.wangyinews.wangyinews.video.fragments.VideoRecyclerViewFragment;
 
@@ -54,7 +55,7 @@ public class MainActivity extends AppCompatActivity implements RadioGroup.OnChec
     }
     private void initData(){
         List<BasePager> pagers=new ArrayList<>();
-        pagers.add(new NewsPager(this));
+        pagers.add(new NewsWebPager(this));   //原本为 NewsPager  后更改为webView
         pagers.add(new VideoPager(this));
         pagers.add(new LivePager(this));
         pagers.add(new MinePager(this));

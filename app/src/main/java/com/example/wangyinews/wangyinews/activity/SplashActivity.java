@@ -19,7 +19,7 @@ import com.example.wangyinews.wangyinews.helper.SharePrefrenceHelper;
 public class SplashActivity extends AppCompatActivity {
     private  int DELAY=3000;
     private static final int TO_GUIDE=1010;
-    private static final String URL="http://www.cnr.cn/mthz/20180711/W020180711523528710841.jpg";
+    private static final String URL="http://img.zcool.cn/community/01e51e581074cda84a0d304ff02d18.png@1280w_1l_2o_100sh.png";
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
