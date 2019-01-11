@@ -5,6 +5,7 @@ import android.content.Intent;
 import android.support.v4.view.ViewPager;
 import android.support.v7.widget.RecyclerView;
 import android.util.Log;
+import android.view.KeyEvent;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.webkit.WebSettings;
@@ -41,10 +42,14 @@ public class NewsWebPager extends BasePager implements RadioGroup.OnCheckedChang
         return R.layout.activity_webview;
     }
 
+    /**
+     * @auther yangxh
+     * 2019/01/11
+     */
     @Override
     public void initViews() {
 
-        WebView web=(WebView) mRootView.findViewById(R.id.web);
+        final WebView web=(WebView) mRootView.findViewById(R.id.web);
         web.loadUrl("https://toutiao.eastday.com/?qid=qid02650&referrer=");  //头条的一个网页新闻
 
         web.getSettings().setJavaScriptEnabled(true);
@@ -54,6 +59,20 @@ public class NewsWebPager extends BasePager implements RadioGroup.OnCheckedChang
             public boolean shouldOverideUrlLoading(WebView view,String url){
                 view.loadUrl(url);
                 return true;   //返回true， 立即跳转，返回false,打开网页有延时
+            }
+        });
+        web.setOnKeyListener(new View.OnKeyListener() {
+            @Override
+            public boolean onKey(View v, int keyCode, KeyEvent event) {
+                if (event.getAction() == KeyEvent.ACTION_DOWN) {
+                    //按返回键操作并且能回退网页
+                    if (keyCode == KeyEvent.KEYCODE_BACK && web.canGoBack()) {
+                        //后退
+                        web.goBack();
+                        return true;
+                    }
+                }
+                return false;
             }
         });
 
